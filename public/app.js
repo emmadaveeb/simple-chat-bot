@@ -9,9 +9,11 @@ let time = "";
 //Get current time
 function getCurrTime() {
     let current = new Date();
-    let currentTime = current.toLocaleTimeString();
-    currentTime = currentTime.substring(0, currentTime.indexOf(":", 3));
-
+    var hours = current.getHours();
+    var minutes = current.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    let currentTime = `${hours}:${minutes} ${ampm}`
+    
     return currentTime;
 }
 
@@ -26,6 +28,7 @@ async function response(str) {
 
 //Create new div for user input
 function addUserMsg(input) {
+
     time = getCurrTime();
     let userMsg = document.createElement("p");
     userMsg.innerHTML = `<b>You:</b> ${input}<br><span style="font-size:0.8rem">${time}</span>`;
@@ -69,4 +72,3 @@ input.addEventListener("keydown", function (e) {
 
 //Clear chat window
 reset.addEventListener("click", () => setTimeout(() => chat.innerHTML = "", 800))
-

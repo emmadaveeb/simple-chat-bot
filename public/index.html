@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
+    <title>Simple Chat Bot</title>
+</head>
+
+<body>
+
+
+    <div class="chatbot">
+        <div id="chat-header">
+            <b><p id="name">&nbspHi, I'm Patrick &nbsp</p></b>
+            <button style="padding:0.2rem" id="reset" type="button">
+                <img style="height: 1.9rem; width: 1.9rem" src="https://www.freeiconspng.com/uploads/restart-icon-7.png" type="button">
+            </button>
+        </div>
+        <section id="chat-window">
+        </section>
+        <section id="chat-footer">
+            <div id="ask">
+                <textarea name="query" placeholder="Ask me something..." style="resize:none"></textarea>
+            </div>
+            <button id="send" type="button">
+                <img src="https://static.thenounproject.com/png/373675-200.png" type="button">
+            </button>
+        </section>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

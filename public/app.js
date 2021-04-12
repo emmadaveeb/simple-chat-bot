@@ -10,7 +10,7 @@ let time = "";
 function getCurrTime() {
     let current = new Date();
     let currentTime = current.toLocaleTimeString();
-    currentTime = currentTime.substring(0, currentTime.indexOf(":", 3)) + ` ${currentTime.split(" ")[1].toLowerCase()}`;
+    currentTime = currentTime.substring(0, currentTime.indexOf(":", 3));
 
     return currentTime;
 }

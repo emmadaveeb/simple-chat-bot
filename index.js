@@ -15,7 +15,7 @@ app.use(express.static("public"));
 //Using client GET request parameters as POST body for chatbot API
 //to prevent exposing API key in front end
 app.get("/:question", async (req, res) => {
-    
+
     const answer = await fetch(`${process.env.CHATBOT_URL}`, {
         method: 'POST',
         headers: {
@@ -23,12 +23,13 @@ app.get("/:question", async (req, res) => {
             'Authorization': `${process.env.CHATBOT_API_KEY}`,
         },
         body: JSON.stringify(req.params)
-    }).then(res => res.json()).then(res=>res).catch(err => err)
-    
+    })
+        .then(res => res.json())
+        .catch(err => err)
+
     res.send(answer);
 
 })
-
 
 
 app.listen(port)
